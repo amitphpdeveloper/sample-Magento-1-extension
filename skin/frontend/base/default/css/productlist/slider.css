@@ -1,0 +1,30 @@
+<?php
+/**
+ * Team Magento ProductList
+ *
+ * @category   Team Magento
+ * @package    ProductList
+ * @author     Team magento <amitlrajdev@gmail.com>
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+*/
+?>
+
+.sorter > .view-mode .slider {
+   background-image: url("slider.png");
+    float: left;
+    height: 20px;
+    margin-top: 5px;
+    text-indent: -9998px;
+    width: 20px;
+}
+
+
+
+.sorter > .view-mode strong.slider , .sorter > .view-mode .slider:hover {
+   background-image: url("slider_active.png");
+    float: left;
+    height: 20px;
+    margin-top: 5px;
+    text-indent: -9998px;
+    width: 20px;
+}

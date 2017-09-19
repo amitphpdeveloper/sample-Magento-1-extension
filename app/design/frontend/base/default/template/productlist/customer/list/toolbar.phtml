@@ -1,0 +1,43 @@
+<?php
+/**
+ * Team Magento ProductList
+ *
+ * @category   Team Magento
+ * @package    ProductList
+ * @author     Team magento <amitlrajdev@gmail.com>
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+*/
+?>
+
+<?php
+/**
+ *
+ * @see Tm_ProductList_Block_Catalog_Product_List_Toolbar
+ */
+?>
+<?php if($this->getCollection()->getSize()): ?>
+<div class="toolbar">
+    <?php if( $this->isExpanded() ): ?>
+        <div class="sorter">
+            <?php if( $this->isEnabledViewSwitcher() ): ?>
+                <p class="view-mode">
+                    <?php $_modes = $this->getModes(); ?>
+                    <?php if($_modes && count($_modes)>1): ?>
+                        <label><?php echo $this->__('View as') ?></label>
+                        <?php foreach ($this->getModes() as $_code=>$_label): ?>
+                            <?php if($this->isModeActive($_code)): ?>
+                                <strong title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></strong>
+                            <?php else: ?>
+                                <a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></a>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </p>
+            <?php endif; ?>
+
+            
+        </div>
+    <?php endif; ?>
+	</div>
+</div>
+<?php endif ?>

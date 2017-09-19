@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Team Magento ProductList
+ *
+ * @category   Team Magento
+ * @package    ProductList
+ * @author     Team magento <amitlrajdev@gmail.com>
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+*/
+-->
+<config>
+  <modules>
+    <Tm_ProductList>
+      <version>0.1.0</version>
+    </Tm_ProductList>
+  </modules>
+  <frontend>
+    <routers>
+      <productlist>
+        <use>standard</use>
+          <args>
+            <module>Tm_ProductList</module>
+            <frontName>productlist</frontName>
+          </args>
+      </productlist>
+    </routers>
+		<layout>
+		  <updates>
+			<productlist>
+			  <file>productlist.xml</file>
+			</productlist>
+		  </updates>
+		</layout>
+		<translate>
+            <productlist>
+                <translations>
+                    <files>
+                        <default>Tm_Productlist.csv</default>
+                    </files>
+                </translations>
+            </productlist>
+        </translate>
+  </frontend>
+  <global>
+    <helpers>
+      <productlist>
+        <class>Tm_ProductList_Helper</class>
+      </productlist>
+    </helpers>
+	<blocks>
+	  <productlist>
+		<class>Tm_ProductList_Block</class>
+	  </productlist>
+			<catalog>
+				<rewrite>
+					<product_list>Tm_ProductList_Block_Catalog_Product_List</product_list>
+				</rewrite>
+			</catalog>
+			<catalog>
+				<rewrite>
+					<product_list_toolbar>Tm_ProductList_Block_Catalog_Product_List_Toolbar</product_list_toolbar>
+				</rewrite>
+			</catalog>
+	</blocks>
+	<resources>
+	  <productlist_setup>
+		<setup>
+		  <module>Tm_ProductList</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </productlist_setup>
+	  <productlist_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </productlist_write>
+	  <productlist_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </productlist_read>
+	</resources>
+  </global>
+  <default>
+        <product_list>
+            <genneral_setting>
+                <enable>1</enable>
+				<jqueryinclude>0</jqueryinclude>
+            </genneral_setting>            
+            <settings>
+                <product_number_to_show>10</product_number_to_show>
+	        </settings> 
+        </product_list>
+    </default>
+</config> 
